@@ -16,7 +16,7 @@ const root = fileURLToPath(new URL("../", import.meta.url));
 const output = path.join(root, "dist");
 const stage = await mkdtemp(path.join(root, ".stage-"));
 try {
-  for (const entry of ["index.html", "src", "assets", "sw.js", "manifest.webmanifest"]) {
+  for (const entry of ["index.html", "admin.html", "household.html", "src", "assets", "sw.js", "manifest.webmanifest"]) {
     await cp(path.join(root, entry), path.join(stage, entry), {
       recursive: true,
     });

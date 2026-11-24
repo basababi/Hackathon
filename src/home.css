@@ -1,0 +1,158 @@
+@font-face {
+  font-family: HomeInter;
+  src: url('/assets/inter.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+}
+.household-page { margin:0; background:#f5f5ef; color:#1e332d; font-family:HomeInter,Inter,"Segoe UI",sans-serif; }
+.hh, .hh-dialog {
+  --hh-paper:#fffefa; --hh-ink:#193b30; --hh-muted:#52665d; --hh-line:#d9e1d6;
+  --hh-green:#235b44; --hh-pale:#e8f1df; --hh-plum:#664964;
+  font:400 1rem/1.55 HomeInter,Inter,"Segoe UI",sans-serif;
+  color:var(--hh-ink); font-synthesis:none;
+}
+.hh { min-height:100dvh; background:#f5f5ef; }
+.hh *, .hh-dialog *, .hh, .hh-dialog { box-sizing:border-box; }
+.hh [hidden], .hh-dialog [hidden] {display:none!important}
+.hh button,.hh input,.hh select,.hh-dialog button,.hh-dialog input,.hh-dialog select { font:inherit; }
+.hh button,.hh-dialog button{ cursor:pointer; }
+.hh button:disabled,.hh-dialog button:disabled{ opacity:.62; cursor:wait; }
+.hh a { text-decoration:none; }
+.hh :is(a,button,select,input):focus-visible,.hh-dialog :is(button,input,select):focus-visible{outline:3px solid #89aa3b;outline-offset:3px}
+.hh h1,.hh h2,.hh h3,.hh p,.hh-dialog h2,.hh-dialog p{ margin:0 }
+.hh h1 { font-size:clamp(1.95rem,3.15vw,2.65rem);line-height:1.15;letter-spacing:-.055em;font-weight:710 }
+.hh h2,.hh-dialog h2 {font-weight:660;font-size:1.16rem;line-height:1.35;letter-spacing:-.032em}
+.hh h3 { font-size:clamp(1.35rem,1.9vw,1.75rem);line-height:1.25;font-weight:650;letter-spacing:-.045em }
+.hh .hh-visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.hh .hh-top {background:#163e32;color:#fafff5;}
+.hh-top-inner {display:flex;align-items:center;gap:2rem;min-height:70px;width:min(1156px,100%);margin:auto;padding:0 24px}
+.hh-brand,.hh-switch,.hh-nav button {display:flex;align-items:center;gap:.6rem;border:0;background:none;color:inherit;white-space:nowrap}
+.hh-brand {padding:0;font-size:1.4rem!important;letter-spacing:-.05em;font-weight:730!important}
+.hh-brand img {display:block;border-radius:10px}
+.hh-nav{display:flex;gap:4px;align-items:center}
+.hh-nav button{min-height:43px;padding:0 13px;font-size:.9rem;font-weight:580;color:#d4e0d4;border-radius:8px}
+.hh-nav button:hover,.hh-switch:hover{background:#ffffff15}
+.hh-nav button[aria-current]{color:#e4f7c9;background:#345b48}
+.hh .hh-switch{margin-left:auto;min-height:40px;padding:4px 11px;border:1px solid #7a98846b;border-radius:8px;font-size:.88rem;color:#edf4e6;font-weight:550}
+.hh-wrap{width:min(1156px,100%);margin:0 auto;padding:2rem 24px 1.5rem}
+.hh-heading,.hh-card-top,.hh-card-actions,.hh-minititle,.hh-service,.hh-stock-estimate,.hh-footer,.hh-dialog-head,.hh-dialog-foot,.hh-season,.hh-plan-date{display:flex;align-items:center}
+.hh-heading{justify-content:space-between;gap:1rem;margin:0 0 1.25rem}
+.hh-heading>span{display:inline-flex;align-items:center;gap:7px;color:var(--hh-muted);font-size:.87rem}
+.hh-main{display:grid;gap:1rem}
+.hh-primary-grid,.hh-secondary-grid,.hh-metrics{display:grid;gap:1rem;align-items:stretch}
+.hh-primary-grid{grid-template-columns:minmax(0,1.18fr) minmax(0,1fr)}
+.hh-secondary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.hh-card,.hh-status-card,.hh-season,.hh-stock-estimate{border-radius:15px}
+.hh-card { min-width:0; padding:1.35rem 1.5rem; border:1px solid var(--hh-line);background:var(--hh-paper); }
+.hh-card>p,.hh-plan-card>p,.hh-service p,.hh-season p{line-height:1.55;color:var(--hh-muted);margin-top:.6rem}
+.hh-card-top{justify-content:space-between;gap:12px}
+.hh-card-top h2,.hh-minititle h2{margin:0}
+.hh-minititle {gap:9px}
+.hh-symbol,.hh-event-icon{display:inline-grid;flex:none;place-items:center;color:#2b6645;background:var(--hh-pale);border-radius:10px}
+.hh-symbol{width:35px;height:35px}
+.hh-symbol.hh-lilac{background:#eee3ee;color:#694e70}
+.hh-symbol.hh-sand{background:#f5e8d5;color:#8d6337}
+.hh-status-card {min-height:238px;position:relative;overflow:hidden;display:flex;align-items:center;background:#193f32;color:#f8fcf3;isolation:isolate}
+.hh-status-card:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#173d31f5 0%,#1e4639e3 35%,#264a38a8 68%,#22443045),url('/assets/ger-district.webp') 71% center/cover no-repeat}
+.hh-status-content{padding:1.6rem 1.7rem}
+.hh-status-label{display:inline-flex;align-items:center;gap:7px;color:#e5f6d2;font-size:.89rem;font-weight:600}
+.hh-status-card h2{font-size:clamp(1.55rem,2.4vw,2.05rem);color:#fffdf7;letter-spacing:-.05em;max-width:31ch;line-height:1.19;margin:10px 0 7px}
+.hh-status-card p{max-width:35ch;font-size:.97rem;color:#f4f6ec;line-height:1.6}
+.hh-status-card.hh-status-medium .hh-status-label{color:#ffdb90}
+.hh-status-card.hh-status-high .hh-status-label{color:#ffd0bb}
+.hh-button { display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-height:43px;border-radius:8px;border:1px solid transparent;padding:8px 14px;font-size:.91rem!important;font-weight:630!important;line-height:1.4;text-align:center; }
+.hh-button svg,.hh-switch svg,.hh-plan-date svg,.hh-season>svg,.hh-stock-estimate>svg,.hh-footer svg{flex:none}
+.hh-status-card .hh-button,.hh-card>.hh-button,.hh-card-actions{margin-top:1rem}
+.hh-button.hh-light{color:#193b2a;background:#d9efaf}
+.hh-button.hh-light:hover{background:#e9f8ca}
+.hh-button.hh-primary{color:#fff;background:#245d45}
+.hh-button.hh-primary:hover{background:#194a36}
+.hh-button.hh-soft{color:#214f3b;background:#e7efd9}
+.hh-button.hh-soft:hover{background:#dae9c8}
+.hh-button.hh-plain{color:#305440;border-color:#c5d4bd;background:#fffefa}
+.hh-button.hh-plain:hover{background:#f1f5eb}
+.hh-text-button {border:0;padding:8px 4px;min-height:40px;background:transparent;color:#3a684a;font-size:.9rem!important;font-weight:640!important}
+.hh-text-button:hover{text-decoration:underline}
+.hh-plan-card{background:#fffcf8}
+.hh-plan-card h3{margin:1.05rem 0 .3rem}
+.hh-plan-date{gap:7px;font-size:.88rem;color:#52655a}
+.hh .hh-stock-warning{color:#895825}
+.hh-card-actions {gap:8px;flex-wrap:wrap}
+.hh-test-card{background:linear-gradient(115deg,#edf4e7,#f9fbf4);border-color:#d3dfc8}
+.hh .hh-quantity{font-size:1.85rem;line-height:1.14;color:var(--hh-ink);font-weight:660;letter-spacing:-.04em}
+.hh-quantity small{font-size:1rem;font-weight:520;letter-spacing:0}
+.hh-stock-estimate,.hh-season{gap:10px;padding:13px 17px;background:#ecf2e7;border:1px solid #d9e3d3;color:#385e41}
+.hh-season{align-items:flex-start;background:#f0ece6;color:#644c3f;border-color:#e1d9ca}
+.hh-season>svg{margin-top:2px}.hh-season p{margin:2px 0 0;font-size:.92rem}
+.hh-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}
+.hh-metrics>.hh-card{display:grid;grid-template-columns:1fr auto;align-items:center;gap:3px 8px}
+.hh-metrics .hh-symbol{grid-row:1;grid-column:2}
+.hh-metrics strong{grid-row:1;grid-column:1;font-size:2rem;line-height:1.2;font-weight:650}
+.hh-metrics .hh-card>span:last-child{grid-column:1/-1;font-size:.93rem;color:var(--hh-muted)}
+.hh-service{justify-content:space-between;gap:12px}.hh-service .hh-button{flex:none;margin:0}
+.hh-events{margin:4px 0 0;padding:0;list-style:none}
+.hh-events li{display:flex;align-items:center;gap:11px;padding:12px 0;border-bottom:1px solid #e3e8dd}
+.hh-events li:last-child{border-bottom:0;padding-bottom:0}
+.hh-events .hh-event-icon{width:33px;height:33px;border-radius:9px}
+.hh-events li>div{min-width:0;line-height:1.4}
+.hh-events strong,.hh-events li>div>span{display:block;overflow-wrap:anywhere}
+.hh-events strong{font-weight:610;font-size:.97rem}
+.hh-events li>div>span,.hh-events time{font-size:.85rem;color:var(--hh-muted)}
+.hh-events time{margin-left:auto;white-space:nowrap}
+.hh-log-filter select,.hh-dialog select{cursor:pointer}
+.hh-log-filter select,.hh-dialog select,.hh-dialog input:not([type=radio]){background:#fff;min-height:43px;border:1px solid #c6d1c1;border-radius:7px;color:var(--hh-ink);padding:8px 10px;max-width:100%}
+.hh-log-filter select,.hh-dialog select{appearance:none;padding-right:31px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' width='14' height='14'%3E%3Cpath d='m5 8 5 5 5-5' fill='none' stroke='%23445b4c' stroke-width='2'/%3E%3C/svg%3E");background-position:right 9px center;background-repeat:no-repeat}
+.hh-log-filter{min-width:0}.hh-log-filter select{font:.9rem HomeInter,Inter,sans-serif}
+.hh-footer{gap:7px;justify-content:center;color:#586954;margin-top:22px;font-size:.83rem;text-align:center}
+.hh-empty{padding:1rem 0}
+.hh-offline{margin-bottom:12px!important;border-radius:8px;background:#fff3d4;padding:10px 12px;color:#705723;font-size:.9rem}
+.hh-notice {position:fixed;z-index:15;bottom:22px;left:50%;transform:translateX(-50%);width:max-content;max-width:min(490px,92vw);padding:10px 16px;background:#183f30;color:#f7faef;border-radius:10px;font-size:.93rem;box-shadow:0 3px 16px #10342526}
+.hh-dialog {padding:0;background:var(--hh-paper);border:1px solid #d5ddce;border-radius:15px;width:min(480px,calc(100% - 24px));max-height:90dvh;box-shadow:0 22px 80px #183d3340}
+.hh-dialog::backdrop{background:#172d266e}
+.hh-dialog-head,.hh-dialog-foot{padding:14px 18px;gap:10px;justify-content:space-between}
+.hh-dialog-head{border-bottom:1px solid var(--hh-line)}.hh-dialog-head h2{font-size:1.22rem}
+.hh-dialog-head button{display:grid;place-items:center;flex:none;width:37px;height:37px;border:0;border-radius:7px;background:#edf2e8;color:#365e40}
+.hh-dialog-body{padding:18px;display:grid;gap:15px}
+.hh-dialog-foot{border-top:1px solid var(--hh-line);justify-content:flex-end}
+.hh-form-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.hh-form-hint{font-size:.95rem;line-height:1.55;color:var(--hh-muted)}
+.hh-field{display:grid;gap:5px;min-width:0;font-weight:590;font-size:.91rem}
+.hh-field :is(input,select){width:100%;min-width:0;font-size:16px!important;font-weight:440}
+.hh-choices{margin:0;padding:0;border:none;min-width:0}
+.hh-choices legend{font-weight:610;margin-bottom:7px}
+.hh-choices>div{display:flex;gap:6px;flex-wrap:wrap}
+.hh-choices label{position:relative;flex:1;min-width:max-content}
+.hh-choices input{position:absolute;opacity:0}
+.hh-choices span{display:grid;place-items:center;min-height:44px;border-radius:8px;border:1px solid #c8d4c3;background:white;font-size:.91rem;cursor:pointer;padding:4px 7px}
+.hh-choices :checked+span{background:#e1efcf;border-color:#739b64;color:#254e33;font-weight:660}
+.hh-choices :focus-visible+span{outline:3px solid #92a84a;outline-offset:2px}
+.hh-form-error{color:#8c352c;font-size:.91rem}
+.hh-loading,.hh-load-error{max-width:500px;margin:35px auto;padding:20px}
+.hh-load-error .hh-button{margin:12px 8px 0 0}
+.hh-report-action{display:flex;justify-content:flex-end}
+@media(max-width:760px){
+  .hh-top-inner{gap:10px;min-height:62px;padding:0 16px}
+  .hh-brand img{width:31px;height:31px}.hh-brand{font-size:1.25rem!important}
+  .hh-wrap{padding:20px 14px calc(84px + env(safe-area-inset-bottom))}
+  .hh-heading{margin-bottom:15px;align-items:flex-start;flex-direction:column;gap:3px}
+  .hh-heading>span{font-size:.81rem}
+  .hh-primary-grid,.hh-secondary-grid{grid-template-columns:1fr}
+  .hh-card{padding:17px}.hh-main,.hh-primary-grid,.hh-secondary-grid,.hh-metrics{gap:11px}
+  .hh-status-card{min-height:180px}.hh-status-content{padding:18px 19px}
+  .hh-status-card h2{font-size:1.62rem}.hh-status-card p{max-width:37ch;font-size:.93rem}
+  .hh-status-card .hh-button{margin-top:12px}
+  .hh-plan-card h3{margin-top:10px}
+  .hh-plan-card>p{margin-top:5px}
+  .hh-nav{position:fixed;z-index:10;bottom:0;left:0;right:0;justify-content:space-evenly;gap:2px;padding:5px 7px calc(5px + env(safe-area-inset-bottom));background:#fcfdf8;border-top:1px solid #d7dfd0}
+  .hh-nav button{justify-content:center;flex:1;min-height:49px;flex-direction:column;gap:2px;padding:4px 3px;color:#586a5f;font-size:.75rem}
+  .hh-nav button:hover{background:#eef3e9}
+  .hh-nav button[aria-current]{background:#e7f0df;color:#285539}
+  .hh-notice{bottom:calc(72px + env(safe-area-inset-bottom))}
+  .hh-metrics>.hh-card{padding:11px 9px;display:flex;align-items:flex-start;flex-direction:column;gap:3px}
+  .hh-metrics .hh-card>span:last-child{font-size:.8rem}
+  .hh-metrics strong{font-size:1.65rem}
+  .hh-metrics .hh-symbol{width:28px;height:28px}
+  .hh-service{align-items:flex-start;flex-direction:column}
+  .hh-events time{font-size:.76rem}.hh-events li{gap:8px}
+}
+@media(max-width:374px){.hh-form-pair{grid-template-columns:1fr}.hh-events .hh-event-icon{display:none}.hh-metrics{gap:6px}.hh-log .hh-card-top{align-items:flex-start;flex-wrap:wrap}}

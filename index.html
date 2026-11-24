@@ -3,29 +3,39 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#102e2b">
-  <meta name="description" content="Хөрсний био-тест, байршлын мониторинг, био-бэлдмэлийн сануулгын нэгдсэн ажлын талбар.">
-  <title>Хяналтын самбар · TerraSense</title>
+  <meta name="theme-color" content="#f7f9f3">
+  <meta name="description" content="Өрхийн хөрсний арчилгаа болон багийн хяналтын самбараа сонгож нээнэ.">
+  <title>Орчноо сонгох · TerraSense</title>
   <link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
-  <link rel="manifest" href="/manifest.webmanifest">
   <link rel="apple-touch-icon" href="/assets/icon-192.png">
-  <link rel="stylesheet" href="/src/style.css">
-  <link rel="stylesheet" href="/src/map.css">
-  <link rel="stylesheet" href="/src/workflows.css">
-  <link rel="stylesheet" href="/src/analysis.css">
-  <link rel="stylesheet" href="/src/backup.css">
-  <script type="module" src="/src/app.js"></script>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/src/portal.css">
+  <script type="module" src="/src/portal.js"></script>
 </head>
 <body>
-  <a class="skip" href="#main">Агуулга руу шилжих</a>
-  <aside id="sidebar" class="sidebar"></aside>
-  <button class="backdrop" id="nav-backdrop" aria-label="Цэс хаах" hidden></button>
-  <div class="shell">
-    <header id="topbar" class="topbar"></header>
-    <div id="connection-state" role="status" hidden></div>
-    <main id="main" tabindex="-1"><div class="loading">Ажлын талбарыг нээж байна…</div></main>
-  </div>
-  <div id="toast" role="status" class="toast" hidden></div>
-  <noscript>TerraSense-г ашиглахын тулд JavaScript-г идэвхжүүлнэ үү.</noscript>
+  <header class="mast">
+    <a class="brand" href="/" aria-label="TerraSense нүүр"><img src="/assets/mark.svg" width="40" height="40" alt=""><span>Terra<span>Sense</span></span></a>
+    <details class="help"><summary>Тусламж</summary><div><strong>Аль хэсгийг сонгох вэ?</strong><p>Айлын арчилгааг хөтлөх бол хэрэглэгчийн хэсгийг, багийн хэмжилт, хэрэгжилтийг хянах бол админ хэсгийг нээнэ. Аль ч хэсгээс «Орчин солих» үйлдлээр буцаж болно.</p></div></details>
+  </header>
+  <main class="entry">
+    <div class="landscape">
+      <img class="landscape-photo" src="/assets/ger-district.webp" alt="" fetchpriority="high">
+      <div class="landscape-copy">
+        <span class="place"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>Улаанбаатар · Гэр хороолол</span>
+        <p>Хөрсний арчилгаа,<br>хяналт</p>
+      </div>
+    </div>
+    <section class="choices" aria-labelledby="role-heading">
+      <div class="intro"><h1 id="role-heading">Орчноо сонгоно уу</h1><p>Бүртгэл, нууц үггүйгээр шууд орно.</p></div>
+      <a class="role family" href="/household">
+        <span class="role-icon"><svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m2.5 11 9.5-8 9.5 8M5 9v11h14V9M10 20v-7h4v7"/></svg></span>
+        <span><strong>Хэрэглэгчээр орох</strong><small>Гэрийнхээ хөрсийг шалгаж, бэлдмэлийн хэрэглээ, нөөцөө хөтөлнө.</small></span>
+      </a>
+      <a class="role team" href="/admin">
+        <span class="role-icon"><svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 16v-3m5 3V7m5 9v-6"/></svg></span>
+        <span><strong>Админаар орох</strong><small>Багийн хяналтын цэг, талбайн хэмжилт, хэрэгжилтийн тайланг харна.</small></span>
+      </a>
+    </section>
+  </main>
 </body>
 </html>

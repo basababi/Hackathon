@@ -40,7 +40,9 @@ const mime = new Map(Object.entries({
 
 function publicFile(pathname) {
   if (pathname === '/') return 'index.html';
-  if (['/index.html', '/sw.js', '/manifest.webmanifest', '/favicon.ico'].includes(pathname)) return pathname.slice(1);
+  if (pathname === '/admin' || pathname === '/admin/') return 'admin.html';
+  if (pathname === '/household' || pathname === '/household/') return 'household.html';
+  if (['/index.html', '/admin.html', '/household.html', '/sw.js', '/manifest.webmanifest', '/favicon.ico'].includes(pathname)) return pathname.slice(1);
   const parts = pathname.slice(1).split('/');
   const [base] = parts;
   const extension = path.extname(pathname);

@@ -18,7 +18,7 @@ function el(parent, name) {
   return parent.querySelector(`[data-wf="${name}"]`);
 }
 
-function openDialog(title, subtitle, symbol, body, footer) {
+export function openDialog(title, subtitle, symbol, body, footer) {
   const dialog = document.createElement('dialog');
   const titleId = `wf-${crypto.randomUUID()}`;
   dialog.className = 'wf-dialog';
@@ -77,7 +77,7 @@ function hex(rgb) {
   return '#' + rgb.map(v => v.toString(16).padStart(2, '0')).join('').toUpperCase();
 }
 
-const photoFields = `<section data-wf="photoPanel" class="wf-photo-panel">
+export const photoFields = `<section data-wf="photoPanel" class="wf-photo-panel">
   <div class="wf-media" data-wf="media"><div class="wf-empty" data-wf="placeholder">
     <span class="wf-photo-symbol">${icon('camera')}</span><strong>Тестийн зургаа оруулна уу</strong>
     <p>Тест болон иж бүрдлийн бага, дунд, өндөр түвшний өнгөний лавлахыг нэг гэрэлд хамтад нь авна уу.</p>
@@ -90,7 +90,7 @@ const photoFields = `<section data-wf="photoPanel" class="wf-photo-panel">
   <p data-wf="photoMessage" class="wf-tip" role="status" hidden></p>
   </section>`;
 
-function photoReader(dialog, invalidate) {
+export function photoReader(dialog, invalidate, onResult = () => {}) {
   const video = el(dialog, 'video');
   const preview = el(dialog, 'preview');
   const raw = document.createElement('canvas');
@@ -162,7 +162,7 @@ function photoReader(dialog, invalidate) {
     invalidate(); refresh();
     if (!active) {
       const result = evaluateReading(samples);
-      if (result.issue) dialog.querySelector('[name=status]').value = 'unread';
+      onResult(result);
       message(result.issue ? 'Тодорхойгүй. ' + result.message : `Хамгийн ойролцоо лавлах өнгө — ${levels[result.status]}. Иж бүрдлийн заавартай тулгаж, түвшнийг доор баталгаажуулна уу.`);
     }
   }
@@ -240,7 +240,7 @@ function photoReader(dialog, invalidate) {
     if (stream || !method || !keys.every(key => samples[key])) return null;
     const values = keys.map(key => `${sampleNames[key]} ${hex(samples[key].rgb)}`).join(', ');
     const result = evaluateReading(samples);
-    return { method, issue: result.issue, note: `${values}. Зургийн үнэлгээ — ${levels[result.status]}. ${result.message}`.trim() };
+    return { method, status: result.status, issue: result.issue, note: `${values}. Зургийн үнэлгээ — ${levels[result.status]}. ${result.message}`.trim() };
   } };
 }
 
@@ -299,7 +299,9 @@ export function openTest({ sites = [], siteId, kitNames = [], onSave }) {
   const openedAt = new Date();
   fields.measuredAt.value = fieldDateTime(openedAt);
   let photoMode = true;
-  const reader = photoReader(dialog, () => { fields.status.value = ''; });
+  const reader = photoReader(dialog, () => { fields.status.value = ''; }, result => {
+    if (result.issue) fields.status.value = 'unread';
+  });
   function mode(value) {
     if (value === photoMode) return;
     photoMode = value;
