@@ -1,0 +1,15 @@
+.backup-panel section + section {
+  border-top: 1px solid var(--rule);
+  margin-top: 19px;
+  padding-top: 17px;
+}
+.backup-panel .button { margin-top: 10px; }
+.backup-panel [role="status"]:empty { display: none; }
+.backup-preview { overflow-x: auto; }
+.backup-counts { margin-top: 10px; font-variant-numeric: tabular-nums; }
+.backup-counts th, .backup-counts td { text-align: right; padding: 8px; }
+.backup-counts th:first-child { text-align: left; padding-left: 8px; }
+.backup-counts tbody th { background: white; }
+.backup-warning, .backup-conflicts { font-size: 13px; line-height: 1.5; color: #984b32; }
+.backup-warning { margin-top: 10px; }
+.backup-conflicts { overflow-wrap: anywhere; padding-left: 20px; }

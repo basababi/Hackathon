@@ -1,0 +1,13 @@
+{
+  "name": "terrasense-monitor",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": "22.x" },
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "start": "node scripts/serve.mjs --production",
+    "test": "node --test"
+  }
+}

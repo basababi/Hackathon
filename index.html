@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#102e2b">
+  <meta name="description" content="Хөрсний био-тест, байршлын мониторинг, био-бэлдмэлийн сануулгын нэгдсэн ажлын талбар.">
+  <title>Хяналтын самбар · TerraSense</title>
+  <link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/assets/icon-192.png">
+  <link rel="stylesheet" href="/src/style.css">
+  <link rel="stylesheet" href="/src/map.css">
+  <link rel="stylesheet" href="/src/workflows.css">
+  <link rel="stylesheet" href="/src/analysis.css">
+  <link rel="stylesheet" href="/src/backup.css">
+  <script type="module" src="/src/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Агуулга руу шилжих</a>
+  <aside id="sidebar" class="sidebar"></aside>
+  <button class="backdrop" id="nav-backdrop" aria-label="Цэс хаах" hidden></button>
+  <div class="shell">
+    <header id="topbar" class="topbar"></header>
+    <div id="connection-state" role="status" hidden></div>
+    <main id="main" tabindex="-1"><div class="loading">Ажлын талбарыг нээж байна…</div></main>
+  </div>
+  <div id="toast" role="status" class="toast" hidden></div>
+  <noscript>TerraSense-г ашиглахын тулд JavaScript-г идэвхжүүлнэ үү.</noscript>
+</body>
+</html>
